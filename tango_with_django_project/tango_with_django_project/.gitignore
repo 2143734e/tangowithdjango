@@ -1,0 +1,17 @@
+Author Lloyd Edgar Evangelista
+
+# Django files
+include
+lib
+local
+man
+share
+Scripts
+.Python
+*.pyc
+*~
+*.db
+ 
+# MacOSX
+.DS_Store
+
