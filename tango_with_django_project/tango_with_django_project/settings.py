@@ -26,7 +26,7 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 #User Login
-LOGIN_URL = '/rango/login/'
+LOGIN_URL = '/accounts/login/'
 # Application definition
 
 INSTALLED_APPS = (
@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration',
 )
 
 PASSWORD_HASHERS = (
@@ -61,6 +62,14 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 # Template 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 TEMPLATE_DIRS =[TEMPLATE_PATH,]
+
+
+# Registration
+REGISTRATION_OPEN = True        # If True, users can register
+ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged in.
+LOGIN_REDIRECT_URL = '/rango/'  # The page you want users to arrive at after they successful log in
+LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not logged in,and are trying to access pages requiring authentication
 
 
 # Database

@@ -14,34 +14,35 @@
 
         <div>
         	<ul>
-             <table style="width:40%">
+             <!-- Menu table listing -->   
+             <!--<table style="width:40%">
                 <tr>
                     <td><a href="{% url 'index' %}">Home</a></li></td>
                     {% if user.is_authenticated %}
                         <td><a href="{% url 'restricted' %}">Restricted Page</a></td> 
-                        <td><a href="{% url 'logout' %}">Logout</a></td>
+                        <td><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></td>
                         <td><a href="{% url 'add_category' %}">Add a New Category</a></td>
+                        <td><a href="{% url 'auth_password_change' %}">Password Change</a></td>
                     {% else %}
-                        <td><a href="{% url 'login' %}">Login</a></td>
-                        <td><a href="{% url 'register' %}">Register Here</a></td>
+                        <td><a href="{% url 'auth_login' %}">Login</a></td>
+                        <td><a href="{% url 'registration_register' %}">Register Here</a></td>
                     {% endif %}
                     <td><a href="{% url 'about' %}">About</a></td>
                 </tr>   
-            </table>
-                   
-           
-           <!-- <li><a href="{% url 'index' %}">Home</a></li>
+            </table>-->
+
+           <li><a href="{% url 'index' %}">Home</a></li>
   		{% if user.is_authenticated %}
        		<li><a href="{% url 'restricted' %}">Restricted Page</a></li>
-        	<li><a href="{% url 'logout' %}">Logout</a></li>
+        	<li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
         	<li><a href="{% url 'add_category' %}">Add a New Category</a></li>
+            <li><a href="{% url 'auth_password_change' %}">Password Change</a></li>
     	{% else %}
-        	<li><a href="{% url 'register' %}">Register Here</a></li>
-        	<li><a href="{% url 'login' %}">Login</a></li>
-   		{% endif %}
-       
+        	<li><a href="{% url 'auth_login' %}">Login</a></li>
+            <li><a href="{% url 'registration_register' %}">Register Here</a></li>
+   		{% endif %} 
     		<li><a href="{% url 'about' %}">About</a></li>
-    		</ul>-->
+    		</ul>
 		</div>
     </body>
 </html>
