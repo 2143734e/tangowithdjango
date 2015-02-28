@@ -2,11 +2,16 @@
 
 {% load staticfiles %}
 
-{% block title %}About Page{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block body_block %}
-   <h1>About...</h1>
-         <strong>{{ "The following content is being developed by: Lloyd Edgar Evangelista: 2143734e"}}<strong><br/>
-        <br><img src="/static/images/Lloyd1.jpg" alt="Lloyd Edgar Evangelista Picture"></img>
-         <p> Number of visits: {{visits}}</p>        
+    <div class="page-header">
+                <h1>About</h1>
+            </div>
+            <div>
+            <strong>{{ "The following content is being developed by: Lloyd Edgar Evangelista: 2143734e"}}<strong><br/>
+        	<br><img width="250" height="350" src="/static/images/Lloyd1.jpg" alt="Lloyd Edgar Evangelista Picture"></img>
+        	 <p> Number of visits: {{visits}}</p> 
+        	 <!-- New line -->
+            </div>
 {% endblock %}

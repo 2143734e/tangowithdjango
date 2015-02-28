@@ -5,20 +5,25 @@
 {% block title %}{{ category_name }}{% endblock %}
 
 {% block body_block %}
-    <h1>{{ category_name }}</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 style="font-size:200%"class="panel-title">{{ category_name }}</h3>
+        </div>
+
+
     {% if category %}
         {% if pages %}
-        <ul>
+        <ul class="list-group">
                 {% for page in pages %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                <li class="list-group-item"><a href="{{ page.url }}">{{ page.title }}</a></li>
                 {% endfor %}
                 </ul>
         {% else %}
                 <strong>No pages currently in category.</strong>
                 {% endif %}
-
+        </div>
         {% if user.is_authenticated %}
-                <a href="/rango/category/{{category.slug}}/add_page/">Add a Page</a>
+                <button style="background-color: white"; class="btn btn-primary" type="submit" name="submit"><a href="/rango/category/{{category.slug}}/add_page/">Add a Page</a></button>
                 {% endif %}
         {% else %}
                  The specified category {{ category_name }} does not exist!
