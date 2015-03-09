@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+
+{% block title %}Users{% endblock %}
+
+{% block body_block %}
+
+    <div class="page-header">
+        <h1>Users List</h1>
+    </div>
+
+   <div class="panel-heading">
+    <p style="font-size: 150% "><u>Username</u></p>
+        <ul class="nav nav-sidebar">
+            {% for user in users %}
+            <li><a href="{% url 'profile' user.username %}">{{ user.username }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
