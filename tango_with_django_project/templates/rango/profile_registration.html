@@ -8,18 +8,14 @@
 {% block body_block %}
 
     <div class="page-header">
-        <h1>Edit Profile</h1>
+        <h1>Add Profile</h1>
     </div>
 
-    <div>
-        <form id="profile_form" role="form" id"user_form" method="post" action="{% url 'add_profile' %}" enctype="multipart/form-data"></form>
-        {% csrf_token %}
-        {{ profile_form.as_p }}
+        <form id="profile_register" role="form" method="post" action="." enctype="multipart/form-data">
 
-        <input type="submit" name="submit" value="Submit"/>
-    </form>
+            {% csrf_token %}
 
-
-
-    </div>
+            {{ form.as_p }}
+            <input type="submit" name="submit" value="Submit" />
+        </form>
 {% endblock %}
