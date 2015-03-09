@@ -30,7 +30,7 @@
                 {% endif %}
         </div>
         {% if user.is_authenticated %}
-                <button style="background-color: white"; class="btn btn-primary" type="submit" name="submit"><a href="/rango/category/{{category.slug}}/add_page/">Add a Page</a></button>
+                <button style="background-color: white"; class="btn btn-primary" type="submit" name="submit"><a href="{% url 'add_page' category.slug %}">Add a Page</a></button>
                 {% endif %}
         {% else %}
                  The specified category {{ category_name }} does not exist!         
