@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load rango_extras %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -35,6 +36,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'search' %}">Search</a></li>
                     {% if user.is_authenticated %}
                         <li><a href="{% url 'restricted' %}">Restricted Page</a></li>
                         <li><a href="{% url 'auth_logout' %}?next=/rango/">Logout</a></li>
@@ -54,7 +56,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-                {% load rango_extras %}
                 {% block side_block %}
                 <h3>Categories</h3>
                 {% get_category_list category %}
